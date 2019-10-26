@@ -924,15 +924,14 @@ private:
   bool _hwRevRows;    // Normal orientation is row 0 at the top. Set to true if reversed
 
   // SPI interface data
-  uint8_t _dataPin;     // DATA is shifted out of this pin ...
-  uint8_t _clkPin;      // ... signaled by a CLOCK on this pin ...
-  uint8_t _csPin;       // ... and LOADed when the chip select pin is driven HIGH to LOW
-  bool    _hardwareSPI; // true if SPI interface is the hardware interface
+  uint8_t _sdaPin;     // DATA is shifted out of this pin ...
+  uint8_t _sclPin;      // ... signaled by a CLOCK on this pin ...
+  uint8_t _i2caddr;       // ... and LOADed when the chip select pin is driven HIGH to LOW
 
   // Device buffer data
   uint8_t _maxDevices;  // maximum number of devices in use
   deviceInfo_t* _matrix;// the current status of the LED matrix (buffers)
-  uint8_t*  _spiData;   // data buffer for writing to SPI interface
+  uint8_t*  _i2cData;   // data buffer for writing to SPI interface
 
   // User callback function for shifting operations
   uint8_t (*_cbShiftDataIn)(uint8_t dev, transformType_t t);

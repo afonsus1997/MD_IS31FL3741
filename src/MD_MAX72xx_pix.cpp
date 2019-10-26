@@ -45,7 +45,8 @@ void MD_MAX72XX::clear(uint8_t startDev, uint8_t endDev)
   if (_updateEnabled) flushBufferAll();
 }
 
-bool MD_MAX72XX::getBuffer(uint16_t col, uint8_t size, uint8_t *pd)
+//Not needed for the project
+/*bool MD_MAX72XX::getBuffer(uint16_t col, uint8_t size, uint8_t *pd)
 {
   if ((col >= getColumnCount()) || (pd == NULL))
     return(false);
@@ -71,7 +72,7 @@ bool MD_MAX72XX::setBuffer(uint16_t col, uint8_t size, uint8_t *pd)
   if (_updateEnabled) flushBufferAll();
 
   return(true);
-}
+}*/
 
 bool MD_MAX72XX::getPoint(uint8_t r, uint16_t c)
 {

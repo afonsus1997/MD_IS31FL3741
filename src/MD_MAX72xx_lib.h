@@ -68,11 +68,11 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 #define FONT_FILE_INDICATOR 'F' ///< Font table indicator prefix for info header
 
 // Shortcuts
-#define SPI_DATA_SIZE (sizeof(uint8_t)*_maxDevices*2)   ///< Size of the SPI data buffers
-#define SPI_OFFSET(i,x) (((LAST_BUFFER-(i))*2)+(x))     ///< SPI data offset for buffer i, digit x
+#define I2C_DATA_SIZE (sizeof(uint8_t)*2)   ///< Size of the SPI data buffers
+#define I2C_OFFSET(i,x) (((LAST_BUFFER-(i))*2)+(x))     ///< SPI data offset for buffer i, digit x
 
 #define FIRST_BUFFER 0                 ///< First buffer number
-#define LAST_BUFFER  (_maxDevices-1)   ///< Last buffer number
+//#define LAST_BUFFER  (_maxDevices-1)   ///< Last buffer number
 
 // Macros to map reversed ROW and COLUMN coordinates
 #define HW_ROW(r) (_hwRevRows ? (ROW_SIZE - 1 - (r)) : (r)) ///< Pixel to hardware coordinate row mapping
