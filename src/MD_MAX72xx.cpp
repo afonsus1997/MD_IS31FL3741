@@ -161,7 +161,7 @@ bool MD_IS31FL3741::control(uint8_t startDev, uint8_t endDev, controlRequest_t m
 {
   if (endDev < startDev) return(false);
 
-  if (mode < UPDATE)  // device based con
+  if (mode < UPDATE)  // device based con 
   {
     i2cClearBuffer();
     controlHardware(mode, value);
@@ -193,7 +193,7 @@ bool MD_IS31FL3741::control(uint8_t buf, controlRequest_t mode, int value)
 
   return(true);
 }
-
+  
 void MD_IS31FL3741::flushBufferAll()
 // Only one data byte is sent to a device, so if there are many changes, it is more
 // efficient to send a data byte all devices at the same time, substantially cutting
